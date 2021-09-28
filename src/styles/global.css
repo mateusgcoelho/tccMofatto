@@ -1,0 +1,191 @@
+/* Declarando palleta de cores global */
+:root {
+  --white: #eeeeee;
+  --black: #0a0a0a;
+  --pink: #ea6594;
+  --pinkDark: #da1958;
+  --whiteSkin: #f5d9d1;
+  --greenAqua: #7dc9c5;
+  --greenBlue: #008db2;
+}
+
+/* Resetando informações do documento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+}
+
+body {
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  color: var(--white);
+  background: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Divisor */
+.divisor {
+  height: 0.8rem;
+  width: 1px;
+
+  background: var(--white);
+
+  margin: 0 2rem;
+}
+
+/* Default button market */
+.button_market {
+  display: block;
+  width: 100%;
+
+  padding: 1.2rem;
+  background: var(--pink);
+
+  border-radius: 0.5rem;
+
+  transition: all 0.2s;
+}
+
+.button_market + .button_market {
+  margin-top: 2rem;
+}
+
+.button_market:hover {
+  background: var(--pinkDark);
+}
+
+/* Reset h1 */
+
+h1, h2, h3 {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+/* Back page button */
+.back_button {
+  color: var(--pink);
+  display: flex;
+
+  padding: 0.5rem;
+
+  transition: all 0.2s;
+}
+
+.back_button:hover {
+  color: var(--pinkDark);
+}
+
+.back_button i {
+  display: flex;
+}
+
+/* Loader modal */
+.loading_screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 990;
+  background: var(--black);
+}
+
+/* Loader Icon */
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--pink);
+  background: -moz-linear-gradient(left, var(--pink) 10%, var(--black) 42%);
+  background: -webkit-linear-gradient(left, var(--pink) 10%, var(--black) 42%);
+  background: -o-linear-gradient(left, var(--pink) 10%, var(--black) 42%);
+  background: -ms-linear-gradient(left, var(--pink) 10%, var(--black) 42%);
+  background: linear-gradient(to right, var(--pink) 10%, var(--black) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: var(--pink);
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: var(--black);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.hid {
+  display: none;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: #ea6594;
+  color: #ea6594;
+}
+
+.testeContainer {
+  height: 100vh;
+  width: 100%;
+}

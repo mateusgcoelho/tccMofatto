@@ -1,0 +1,156 @@
+/* Content */
+main {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow-y: hidden;
+
+    padding: 2rem;
+
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top_header {
+    display: flex;
+    align-items: center;
+}
+
+.top_header h1 {
+    margin-left: 2rem;
+}
+
+header h1 {
+    display: block;
+
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: var(--pink);
+}
+
+/* Status Coin */
+.status_coin {
+    display: flex;
+    align-items: center;
+
+    color: var(--white);
+}
+
+.status_coin img {
+    margin-right: .5rem;
+}
+
+.status_coin p {
+    font-weight: 300;
+    font-size: 2rem;
+
+    color: var(--white);
+}
+
+.status_bar_item_icon {
+    width: 2rem;
+}
+
+/* Content */
+.content {
+    width: 100%;
+
+    display: grid;
+    grid-template-areas: 
+        'a a b b'
+        'a a b b'
+        'c c c c';
+    gap: 2rem;
+}
+
+/* Content Item */
+.content_item {
+    position: relative;
+    height: 20rem;
+
+    cursor: pointer;
+    padding: 0 4rem;
+
+    border-radius: .5rem;
+}
+
+.content_item:nth-child(1) {
+    grid-area: a;
+
+    background-size: 102%;
+}
+
+.content_item:nth-child(2) {
+    grid-area: b;
+
+    background-size: 130%;
+}
+
+.content_item:nth-child(3) {
+    grid-area: c;
+}
+
+.content_item:hover {
+    background-size: 110%;
+}
+
+.content_item_modal {
+    opacity: 0;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: all .2s;
+}
+
+.content_item_modal:hover {
+    opacity: 1;
+
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.content_item_balance {
+    display: block;
+
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    margin-top: 2rem;
+}
+
+/* Title Section */
+.title_section {
+    padding: 2rem 0;
+
+    font-weight: 300;
+}
+
+/* Content Have */
+.active {
+    border: .5rem solid var(--pink);
+}
+

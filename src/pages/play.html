@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="../styles/pages/play.css">
+    <link rel="stylesheet" href="../styles/global.css">
+
+    <title>Roomie | Jogar</title>
+</head>
+<body>
+    <section class="loading_screen" id="loading_screen">
+        <div class="loader">Loading...</div>
+    </section>
+
+    <main id="background_shop">
+        <section class="character">
+            <img src="../assets/icons/character.png" alt="Personagem" class="character">
+        </section>
+
+        <header class="status_bar">
+            <section class="status_bar_content">
+                <div class="hours">
+                    <h3 id="hours_info"></h3>
+                </div>
+
+                <div class="status_bars">
+                    <section class="status_bar_item" title="Status Comida">
+                        <img src="../assets/chicken.png" alt="Coxa Frango" class="status_bar_item_icon">
+
+                        <div class="status_bar_item_progress">
+                            <div class="w3-border">
+                                <div id="food" class="w3-red" style="height: 1.5rem; width: 50%"></div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="divisor"></div>
+                    
+                    <section class="status_bar_item" title="Status Vida">
+                        <img src="../assets/heart.png" alt="Heart" class="status_bar_item_icon">
+
+                        <div class="status_bar_item_progress">
+                            <div class="w3-border">
+                                <div id="health" class="w3-green" style="height: 1.5rem; width: 50%"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="divisor"></div>
+
+                    <section class="status_coin" title="Status Vida">
+                        <img src="../assets/coin.png" alt="Heart" class="status_bar_item_icon">
+
+                        <p id="balance">0 <span style="font-size: 1rem;">R$</span></p>
+                    </section>
+                </div>
+            </section>
+        </header>
+
+        <section class="room"></section>
+
+        <nav class="navigator">
+            <section class="navigator_options">
+                <a href="./market.html" class="navigator_item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Mercado</p>
+                </a>
+                <a href="./inventory.html" class="navigator_item">
+                    <i class="fas fa-user"></i>
+                    <p>Inventário</p>
+                </a>
+            </section>
+        </nav>
+    </main>
+
+    <script src="../scripts/play.js"></script>
+    <script src="../scripts/time.js"></script>
+    <script src="../scripts/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+</body>
+</html>
