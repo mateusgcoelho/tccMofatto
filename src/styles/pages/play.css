@@ -37,6 +37,17 @@
 .status_bars {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 450px) {
+    .status_bars {
+        margin-top: 2rem;
+    }
+
+    .status_bar_item {
+        margin-bottom: .6rem;
+    }
 }
 
 .status_bar_item {
