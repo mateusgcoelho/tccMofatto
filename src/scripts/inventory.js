@@ -132,7 +132,7 @@ const populateInterface = () => {
         controllers.backgroundList.innerHTML += `
             <div class="content_item ${backgroundSelected.id == backgroundId ? 'active' : ''}" style="
                 background: url('../assets/backgrounds/${backgrounds[indexId].id}/day.gif') center;
-                background-size: 102%;
+                background-size: cover;
 
                 transition: all 1s ease-in;
                 -moz-transition: all 1s ease-in;
