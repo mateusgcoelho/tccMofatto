@@ -1,0 +1,25 @@
+Nosso grupo refez a estrutura do projeto, buscando uma melhor organização tanto de ideias quanto de código;
+
+A pagina inicial consiste basicamente na dashboard do jogador, onde ele pode ver os status do seu boneco
+Como a vida, nivel de fome e moedas.
+(Nosso plano é implementar mais uma barra indicando a "diversão/entretenimento?")
+
+Logo na barra de navegação em baixo temos a opção de entrar em nosso inventario onde ficara os itens do personagem,
+que atualmente esta contando apenas com a funcionalidade de Backgrounds,
+onde podemos escolher entre 3 tipos de (tempo) 
+DIA, TARDE E NOITE os quais podem ser adquiridos com a moeda do jogo.
+
+Também temos a página de mercado onde ficara os itens disponíveis a compra com a própria moeda do jogo.
+
+Pra ultima apresentação iremos adicionar roupas em que o usuário pudera adquirir também com suas moedas.
+
+O sistema de entretenimento será desenvolvido basicamente como um sistema de tarefas em que o personagem pode executar
+Determinadas ações, e que cada uma tem seu próprio tempo de conclusão e uma recompensa em moedas diferente.
+
+---
+
+As informações estão sendo salvas no localStorage pois estamos estruturando tudo pra iniciar nossa API em Node o que não
+Vai demorar muito pra ser finalizado pois são poucas tabelas e é bem simples todas as rotas;
+
+O banco usado pra conseguir salvar as informações será provavelmente MySQL por conta dos relacionamentos
+Entre compra, inventário, itens e usuário.

@@ -1,207 +1,229 @@
 /* Main Content */
 #background_shop {
-    position: relative;
+  position: relative;
 
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 /* Top Status Bar */
 .status_bar {
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .status_bar_content {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .status_bars {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 450px) {
-    .status_bars {
-        margin-top: 2rem;
-    }
-
-    .status_bar_item {
-        margin-bottom: .6rem;
-    }
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .status_bar_item {
-    width: 14rem;
+  width: 14rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .status_bar_item p {
-    color: var(--white);
+  color: var(--white);
 }
 
 .status_bar_item_progress {
-    width: 10rem;
+  width: 10rem;
 }
 
 .status_bar_item_icon {
-    width: 2rem;
+  width: 2rem;
 }
 
 .status_coin {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    color: var(--white);
+  color: var(--white);
 }
 
 .status_coin img {
-    margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .status_coin p {
-    font-weight: 300;
-    font-size: 2rem;
+  font-weight: 300;
+  font-size: 2rem;
 
-    color: var(--white);
+  color: var(--white);
 }
 
 /* Moment Now */
 .hours {
-    color: var(--white);
+  color: var(--white);
 
-    margin-right: 7rem;
+  margin-right: 7rem;
 }
 
 /* Bottom Navigator */
 .navigator {
-    position: absolute;
+  position: absolute;
 
-    bottom: 0;
-    left: 0;
-    right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-    background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .navigator_options {
-    max-width: 190px;
-    margin: 0 auto;
+  max-width: 190px;
+  margin: 0 auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navigator_options a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    text-align: center;
+  text-align: center;
 
-    padding: 1.4rem;
+  padding: 1.4rem;
 
-    transition: all .2s;
+  transition: all 0.2s;
 }
 
 .navigator_item i {
-    font-size: 1.4rem;
-    margin-bottom: .5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 
-    color: var(--white);
+  color: var(--white);
 }
 
 .navigator_options a:hover {
-    background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Logo Roomie */
 #logo_game {
-    position: absolute;
-    width: 100%;
+  position: absolute;
+  width: 100%;
 
-    top: .6rem;
-    left: 0;
-    right: 0;
+  top: 0.6rem;
+  left: 0;
+  right: 0;
 
-    width: 8rem;
-    margin: 0 auto;
+  width: 8rem;
+  margin: 0 auto;
 
-    background: var(--whiteSkin);
-    border-radius: 50%;
-    border: .3rem solid #39006F;
+  background: var(--whiteSkin);
+  border-radius: 50%;
+  border: 0.3rem solid #39006f;
 }
 
 /* Room Content */
 .room {
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 
-    background: url("../../assets/room.png") center;
-    background-size: 60%;
-    background-repeat: no-repeat;
+  background: url("../../assets/room.png") center;
+  background-size: 60%;
+  background-repeat: no-repeat;
 
-    /* animation-name: MoveUpDown;
+  /* animation-name: MoveUpDown;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out; */
 }
 
 @keyframes MoveUpDown {
-    0% { transform: translate(0,  0rem); }
-    50%  { transform: translate(0, .4rem); }
-    100%   { transform: translate(0, -0rem); }   
+  0% {
+    transform: translate(0, 0rem);
+  }
+  50% {
+    transform: translate(0, 0.4rem);
+  }
+  100% {
+    transform: translate(0, -0rem);
+  }
 }
 
 /* Character */
 .character {
-    position: absolute;
+  position: absolute;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .character img {
-    width: 15rem;
-    height: 15rem;
+  width: 15rem;
+  height: 15rem;
 
-    animation-name: MoveUpDown;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+  animation-name: MoveUpDown;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 /* Media Query */
 @media (max-width: 1252px) {
-    .room {
-        background-size: 95%;
-    }   
+  .room {
+    background-size: 95%;
+  }
+}
+
+@media (max-width: 450px) {
+  .status_bars {
+    margin-top: 2rem;
+  }
+
+  .status_bar_content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status_bar_item {
+    margin-bottom: 0.6rem;
+  }
+
+  .hours {
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hours h3 {
+    text-align: center;
+  }
 }
