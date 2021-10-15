@@ -205,8 +205,4 @@ h3 {
     display: flex;
     flex-direction: column;
   }
-
-  .content_item_modal + .content_item_modal {
-    margin-top: 3rem;
-  }
 }

@@ -93,6 +93,7 @@ const populateBackgroundList = () => {
                             -o-transition: all 1s ease-in;
                             -webkit-transition: all 1s ease-in;
                             background-repeat: no-repeat;
+                            margin-bottom: 3rem;
                         ">
                             <div class="content_item_modal">
                                 <section class="info">
