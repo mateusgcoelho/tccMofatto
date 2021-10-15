@@ -9,35 +9,35 @@ let controllers = {
 };
 
 let backgrounds = [
-    {
-        id: 1,
-        name: "Mont Fuji",
-        price: 200,
-    },
-    {
-        id: 2,
-        name: "Londres",
-        price: 420,
-    },
-    {
-        id: 3,
-        name: "Farol",
-        price: 750,
-    },
-    {
-        id: 4,
-        name: "Veneza",
-        price: 1050,
-    },
+  {
+    id: 1,
+    name: "Mont Fuji",
+    price: 200,
+  },
+  {
+    id: 2,
+    name: "Londres",
+    price: 420,
+  },
+  {
+    id: 3,
+    name: "Farol",
+    price: 750,
+  },
+  {
+    id: 4,
+    name: "Veneza",
+    price: 1050,
+  },
 ];
 
 const formatBalance = new Intl.NumberFormat("pt-BR");
 
 const clearInfos = () => {
-    localStorage.removeItem("roomie:backgrounds");
-    localStorage.removeItem("roomie:backgrounds@selected");
+  localStorage.removeItem("roomie:backgrounds");
+  localStorage.removeItem("roomie:backgrounds@selected");
 
-    window.location.href = "./play.html";
+  window.location.href = "./play.html";
 };
 
 // Iniciando variaveis
@@ -54,7 +54,7 @@ const initialize = () => {
 
     populateInterface();
     populateBackgroundList();
-  } catch (error) {  
+  } catch (error) {
     alert(error);
     clearInfos();
   }
@@ -62,8 +62,8 @@ const initialize = () => {
 
 // Função para popular dados para interface
 const populateInterface = () => {
-    // Setando visualmente o Dinheiro
-    controllers.balance.innerHTML = `
+  // Setando visualmente o Dinheiro
+  controllers.balance.innerHTML = `
         <p id="balance">
             ${formatBalance.format(state.balance)} 
             <span style="font-size: 1rem;">${state.currencyType}</span>
@@ -73,17 +73,19 @@ const populateInterface = () => {
 
 // Setando Backgrounds na Lista
 const populateBackgroundList = () => {
-    try {
-        const backgroundsLocal = JSON.parse(localStorage.getItem("roomie:backgrounds"));
+  try {
+    const backgroundsLocal = JSON.parse(
+      localStorage.getItem("roomie:backgrounds")
+    );
 
-        controllers.backgroundList.innerHTML = "";
-        if (backgroundsLocal.length < backgrounds.length) {
-            backgrounds.map((background) => {
-                if (!backgroundsLocal.includes(background.id)) {
-                    controllers.backgroundList.innerHTML += `
+    controllers.backgroundList.innerHTML = "";
+    if (backgroundsLocal.length < backgrounds.length) {
+      backgrounds.map((background) => {
+        if (!backgroundsLocal.includes(background.id)) {
+          controllers.backgroundList.innerHTML += `
                         <div class="content_item" style="
                             background: url('../assets/backgrounds/${background.id}/day.gif') center;
-                            background-size: 102%;
+                            background-size: cover;
 
                             transition: all 1s ease-in;
                             -moz-transition: all 1s ease-in;
@@ -105,73 +107,84 @@ const populateBackgroundList = () => {
                             </div>
                         </div>
                     `;
-                }
-            });
-        } else {
-            controllers.backgroundList.innerHTML = "<p>Nenhum background disponivel para compra!</p>";
         }
-    } catch (error) {
-        clearInfos();
+      });
+    } else {
+      controllers.backgroundList.innerHTML =
+        "<p>Nenhum background disponivel para compra!</p>";
     }
+  } catch (error) {
+    clearInfos();
+  }
 };
 
 // Função de comprar algum item na loja
 const buyItem = (id) => {
-    let itemIndex = id - 1;
+  let itemIndex = id - 1;
 
-    if (state.balance >= backgrounds[itemIndex].price) {
-        const backgroundsLocal = JSON.parse(localStorage.getItem("roomie:backgrounds"));
-        
-        Swal.fire({
-            title: "Deseja mesmo Comprar?",
-            text: `O Item Background ${backgrounds[itemIndex].name} custa ${backgrounds[itemIndex].price} Moedas`,
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#ff92b8",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Comprar",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.value == true) {
-                localStorage.setItem("roomie:balance", state.balance - backgrounds[itemIndex].price);
-                state.balance -= backgrounds[itemIndex].price;
+  if (state.balance >= backgrounds[itemIndex].price) {
+    const backgroundsLocal = JSON.parse(
+      localStorage.getItem("roomie:backgrounds")
+    );
 
-                populateInterface();
+    Swal.fire({
+      title: "Deseja mesmo Comprar?",
+      text: `O Item Background ${backgrounds[itemIndex].name} custa ${backgrounds[itemIndex].price} Moedas`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#ff92b8",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Comprar",
+      cancelButtonText: "Cancelar",
+    })
+      .then((result) => {
+        if (result.value == true) {
+          localStorage.setItem(
+            "roomie:balance",
+            state.balance - backgrounds[itemIndex].price
+          );
+          state.balance -= backgrounds[itemIndex].price;
 
-                let newBackgrounds = [id];
+          populateInterface();
 
-                backgroundsLocal.map((backgroundId) => {
-                    newBackgrounds.push(backgroundId);
-                });
+          let newBackgrounds = [id];
 
-                localStorage.setItem("roomie:backgrounds", JSON.stringify(newBackgrounds));
+          backgroundsLocal.map((backgroundId) => {
+            newBackgrounds.push(backgroundId);
+          });
 
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Você adquiriu o Background",
-                    showConfirmButton: false,
-                    timer: 1500,
-                }).then(() => window.location.href = "./play.html");
-            }
-        }).catch((error) => {
-            Swal.fire({
-                position: "center",
-                icon: "error",
-                title: error,
-                showConfirmButton: false,
-                timer: 1500,
-            });
-        });
-    } else {
-        Swal.fire({
+          localStorage.setItem(
+            "roomie:backgrounds",
+            JSON.stringify(newBackgrounds)
+          );
+
+          Swal.fire({
             position: "center",
-            icon: "error",
-            title: "Saldo insuficiente!",
+            icon: "success",
+            title: "Você adquiriu o Background",
             showConfirmButton: false,
             timer: 1500,
+          }).then(() => (window.location.href = "./play.html"));
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: error,
+          showConfirmButton: false,
+          timer: 1500,
         });
-    }
+      });
+  } else {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Saldo insuficiente!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 };
 
 initialize();
